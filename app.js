@@ -7,7 +7,7 @@ const app = express()
 
 require("./config")(app)
 
-app.locals.title = `Iron Platform`
+app.locals.title = `Project Web`
 
 require("./config/session.config")(app)     // sesiones
 
