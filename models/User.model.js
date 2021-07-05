@@ -8,7 +8,9 @@ const userSchema = new Schema(
       required: true,
       unique: true,
       validate: {
-        validator: /^[\w-\.]+@([\w -]+\.)+[\w-]{2,4} $/,
+        validator: function(email) {
+          return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+        },
         message: 'Ingresa un email válido'
       }
     },
@@ -32,7 +34,7 @@ const userSchema = new Schema(
     },
     name: {
       type: String,
-      required: true,
+      
     },
     role: {
       type: String,
