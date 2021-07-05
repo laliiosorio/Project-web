@@ -3,16 +3,31 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    username: { type: String, unique: true },
-    name: String,
-    password: String,
-    profileImg: String,
+    mail: {
+      type: String,
+      require: true,
+      unique: true
+    },
+    password: {
+      type: String,
+      require: true,
+      unique: true
+    },
+    image: {
+      type: String,
+      default: "https://images.media-allrecipes.com/images/75131.jpg"
+    },
     description: String,
+    name: {
+      type: String,
+      require: true,
+      unique: true
+    },
     role: {
       type: String,
-      default: 'STUDENT',
-      enum: ['PM', 'DEV', 'TA', 'STUDENT']
-    }
+      default: 'VISITOR',
+      enum: ['ADMIN', 'MEMBER','VISITOR']
+    },
   },
   {
     timestamps: true
