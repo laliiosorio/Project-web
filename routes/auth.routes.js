@@ -5,13 +5,12 @@ const User = require('./../models/User.model')
 
 
 // Signup
-router.get('/registro', (req, res) => res.render('pages/auth/signup-page'))
+router.get('/signup', (req, res) => res.render('pages/auth/signup-page'))
 
-router.post('/registro', (req, res) => {
+router.post('/signup', (req, res) => {
 
-  const { username, pwd, profileImg, description } = req.body
-
-  if (!username.length || !pwd.length || !profileImg.length || !description.length) {
+  const { mail, pwd } = req.body
+  if (!mail.length || !pwd.length) {
     res.render('pages/auth/signup-page', { errorMessage: 'Rellena todos los campos' })
     return
   }
@@ -22,7 +21,7 @@ router.post('/registro', (req, res) => {
   }
 
   User
-    .findOne({ username })
+    .findOne({ mail })
     .then(user => {
 
       if (user) {
@@ -34,28 +33,25 @@ router.post('/registro', (req, res) => {
       const salt = bcrypt.genSaltSync(bcryptSalt)
       const hashPass = bcrypt.hashSync(pwd, salt)
 
+      
       User
-        .create({ username, password: hashPass, profileImg, description })
+        .create({ mail, password: hashPass })
         .then(() => res.redirect('/'))
-        .catch(err => console.log(err))
+        .catch(err => console.log(err, "si soy yo el error"))
 
     })
     .catch(err => console.log(err))
 })
 
-
-
-
-
 // Login
-router.get('/inicio-sesion', (req, res) => res.render('pages/auth/login-page'))
+router.get('/login', (req, res) => res.render('pages/auth/login-page'))
 
-router.post('/inicio-sesion', (req, res) => {
+router.post('/login', (req, res) => {
 
-  const { username, pwd } = req.body
+  const { mail, pwd } = req.body
 
   User
-    .findOne({ username })
+    .findOne({ mail })
     .then(user => {
 
       if (!user) {
@@ -74,10 +70,6 @@ router.post('/inicio-sesion', (req, res) => {
     .catch(err => console.log(err))
 })
 
-
-
-router.get('/desconectar', (req, res) => req.session.destroy(() => res.redirect('/')))
-
-
+router.get('/close', (req, res) => req.session.destroy(() => res.redirect('/')))
 
 module.exports = router
