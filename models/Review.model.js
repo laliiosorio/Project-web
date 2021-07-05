@@ -5,7 +5,6 @@ const reviewSchema = new Schema(
     {
         user: { type: Schema.Types.ObjectId, ref: 'User' },
         airport: { type: Schema.Types.ObjectId, ref: 'Airport' },
-        quarantine: Boolean,
         migrationTime: {
             type: Number
         },
@@ -35,7 +34,8 @@ const reviewSchema = new Schema(
         requirements: {
             pcr: Boolean,
             vaccine: Boolean,
-            greenPassport: Boolean
+            greenPassport: Boolean,
+            quarantine: Boolean
         }
     },
     {

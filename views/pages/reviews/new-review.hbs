@@ -1,0 +1,71 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <h1 style="font-weight: 100">Nueva review</h1>
+        </div>
+
+        <div class="col-md-6">
+
+            <form action="/coasters/new" method="POST">
+                <div class="form-group">
+                    <label for="park-list">Aeropuerto:</label>
+                    <select name="park_id" class="form-control" id="park-list">
+                        <option>Seleccionar</option>
+                        {{#each parks}}
+                        <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="migration-input">Tiempo en migración</label>
+                    <input name="migrationTime" type="number" class="form-control" id="migration-input">
+                </div>
+                <div class="form-group">
+                    <label for="descriptionPositive-input">Experiencia positiva</label>
+                    <input name="positiveExperience" type="text" class="form-control" id="descriptionPositive-input">
+                </div>
+                <div class="form-group">
+                    <label for="descriptionNegative-input">Experiencia negative</label>
+                    <input name="negativeExperience" type="text" class="form-control" id="descriptionNegative-input">
+                </div>
+                <div class="form-group">
+                    <label for="rating-input">Rating</label>
+                    <input name="rating" type="number" class="form-control" id="rating-input">
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        PCR </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        VACUNA
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        GREEN PASSPORT
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        CUARENTENA
+                    </label>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-dark">Crear review</button>
+                <br>
+                <br>
+                <a href="/" class="btn btn-dark">Volver</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
