@@ -6,17 +6,29 @@ const airportSchema = new Schema(
         name: {
             type: String
         },
-        country: {
+        iata: {
             type: String
         },
-        city: {
+        iso: {
             type: String
         },
-        location: {
-            type: {
-                type: String
-            },
-            coordinates: [Number]
+        status: {
+            type: Boolean
+        },
+        continent: {
+            type: String
+        },
+        type: {
+            type: String
+        },
+        size: {
+            type: String
+        },
+        lat: {
+            type: Number
+        },
+        lon: {
+            type: Number
         }
     },
     {

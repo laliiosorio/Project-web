@@ -5,28 +5,39 @@ const userSchema = new Schema(
   {
     mail: {
       type: String,
-      require: true,
-      unique: true
+      required: true,
+      unique: true,
+      validate: {
+        validator: /^[\w-\.]+@([\w -]+\.)+[\w-]{2,4} $/,
+        message: 'Ingresa un email válido'
+      }
     },
     password: {
       type: String,
-      require: true,
-      unique: true
+      required: true
     },
     image: {
       type: String,
-      default: "https://images.media-allrecipes.com/images/75131.jpg"
+      required: true,
+      default: "https://image.flaticon.com/icons/png/512/1200/1200919.png"
     },
-    description: String,
+    description: {
+      type: String,
+      required: true,
+      default: 'Así soy yo',
+      minlength: 2,
+      maxlength: 250,
+      trim: true,
+      set: value => value.charAt(0).toUpperCase() + value.substring(1)
+    },
     name: {
       type: String,
-      require: true,
-      unique: true
+      required: true,
     },
     role: {
       type: String,
-      default: 'VISITOR',
-      enum: ['ADMIN', 'MEMBER','VISITOR']
+      default: 'MEMBER',
+      enum: ['ADMIN', 'MEMBER']
     },
   },
   {
