@@ -41,6 +41,9 @@ const userSchema = new Schema(
       default: 'MEMBER',
       enum: ['ADMIN', 'MEMBER']
     },
+    path:{
+      type: String
+    }
   },
   {
     timestamps: true

@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Perfil Usuario</h1>
+    <hr>
+    <br>
+    <div class="row justify-content-between">
+        <div class="col-md-4">
+            <h2>{{mail}}</h2>
+        </div>
+        <div class="col-md-4 ">
+            <div class="btn-group">
+                <form action="#" method="POST">
+                    <button type="submit" class="btn btn-danger btn-lg mr-2">Eliminar</button>
+                </form>
+                <br>
+                <a class="btn btn-primary btn-lg" href='/profile/{{_id}}/edit'>Editar</a>
+            </div>
+        </div>
+    </div>
+    <section>
+
+        <div>
+            <img class='img' src="{{image}}" alt="{{name}}">
+        </div>
+
+    </section>
+
+    <div class="row">
+        <div class="col-md-8 flex-row">
+            <h4>{{description}}</h4>
+        </div>
+        <div class="col-md-4">
+            <br>
+            <h6><strong>{{name}}</strong></h6>
+            <br>
+        </div>
+    </div>
+    <hr>
+    <a href="/places" class=" btn btn-dark">Volver al listado</a>
+</div>
