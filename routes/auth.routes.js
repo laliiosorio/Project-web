@@ -9,7 +9,8 @@ router.get('/signup', (req, res) => res.render('pages/auth/signup-page'))
 
 router.post('/signup', (req, res) => {
 
-  const { mail, pwd } = req.body
+  //incluir name
+  const { name, mail, pwd } = req.body
   if (!mail.length || !pwd.length) {
     res.render('pages/auth/signup-page', { errorMessage: 'Rellena todos los campos' })
     return
@@ -33,9 +34,9 @@ router.post('/signup', (req, res) => {
       const salt = bcrypt.genSaltSync(bcryptSalt)
       const hashPass = bcrypt.hashSync(pwd, salt)
 
-      
+
       User
-        .create({ mail, password: hashPass })
+        .create({ name, mail, password: hashPass })
         .then(() => res.redirect('/'))
         .catch(err => console.log(err, "si soy yo el error"))
 
@@ -65,7 +66,7 @@ router.post('/login', (req, res) => {
       }
 
       req.session.currentUser = user      // Iniciar sesión = almacenar el usuario logueado en req.session.currentUser
-      res.redirect('/')
+      res.redirect('/profile')
     })
     .catch(err => console.log(err))
 })
