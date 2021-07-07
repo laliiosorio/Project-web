@@ -8,23 +8,30 @@ const reviewSchema = new Schema(
         migrationTime: {
             type: Number
         },
-        positiveExperience: {
-            type: String,
+        travelDate: {
+            type: Date,
             required: true,
-            default: 'Sin comentarios',
-            minlength: 2,
-            maxlength: 250,
-            trim: true,
-            set: value => value.charAt(0).toUpperCase() + value.substring(1)
+            default: Date.now()
         },
-        negativeExperience: {
-            type: String,
-            required: true,
-            default: 'Sin comentarios',
-            minlength: 2,
-            maxlength: 250,
-            trim: true,
-            set: value => value.charAt(0).toUpperCase() + value.substring(1)
+        experience: {
+            positiveExperience: {
+                type: String,
+                required: true,
+                default: 'Sin comentarios',
+                minlength: 2,
+                maxlength: 250,
+                trim: true,
+                set: value => value.charAt(0).toUpperCase() + value.substring(1)
+            },
+            negativeExperience: {
+                type: String,
+                required: true,
+                default: 'Sin comentarios',
+                minlength: 2,
+                maxlength: 250,
+                trim: true,
+                set: value => value.charAt(0).toUpperCase() + value.substring(1)
+            }
         },
         rating: {
             type: Number,
@@ -32,10 +39,26 @@ const reviewSchema = new Schema(
             max: 10
         },
         requirements: {
-            pcr: Boolean,
-            vaccine: Boolean,
-            greenPassport: Boolean,
-            quarantine: Boolean
+            pcr: {
+                type: Boolean,
+                required: true,
+                default: false
+            },
+            vaccine: {
+                type: Boolean,
+                required: true,
+                default: false
+            },
+            greenPassport: {
+                type: Boolean,
+                required: true,
+                default: false
+            },
+            quarantine: {
+                type: Boolean,
+                required: true,
+                default: false
+            }
         }
     },
     {

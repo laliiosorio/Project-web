@@ -1,0 +1,30 @@
+<div class="container coasters-index">
+
+    <a href="/review/new" class="btn btn-dark">Crear nueva review</a>
+    <br><br>
+    <h1 style="font-weight: 100">All reviews</h1>
+    <hr>
+    <br><br>
+
+    <div class="row">
+        {{#each reviews}}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{airport.name}}</h5>
+                    {{#with $date}}
+                    <h6 class="card-subtitle mb-2 text-muted">{{date}}</h6>
+                    {{/with}}
+                    <p class="card-text">{{experience.positiveExperience}}</p>
+                    <a href="/review/{{id}}" class="card-link">Más Info</a>
+
+
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+
+
+</div>

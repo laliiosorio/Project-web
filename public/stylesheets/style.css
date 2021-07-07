@@ -29,3 +29,8 @@ img {
     bottom: 0px
   }
 }
+
+#airportMap{
+  height: 380px;
+  background-color: red;
+}

@@ -8,15 +8,19 @@
 
         <div class="col-md-6">
 
-            <form action="/coasters/new" method="POST">
+            <form action="/review/new" method="POST">
                 <div class="form-group">
-                    <label for="park-list">Aeropuerto:</label>
-                    <select name="park_id" class="form-control" id="park-list">
+                    <label for="airports-list">Aeropuerto</label>
+                    <select name="airport" class="form-control" id="airports-list">
                         <option>Seleccionar</option>
-                        {{#each parks}}
+                        {{#each airports}}
                         <option value="{{id}}">{{name}}</option>
                         {{/each}}
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="arrivalDate-input">Fecha del viaje</label>
+                    <input name="travelDate" type="date" class="form-control" id="arrivalDate-input">
                 </div>
                 <div class="form-group">
                     <label for="migration-input">Tiempo en migración</label>
@@ -32,29 +36,40 @@
                 </div>
                 <div class="form-group">
                     <label for="rating-input">Rating</label>
-                    <input name="rating" type="number" class="form-control" id="rating-input">
+                    <select name="rating" class="form-control" id="rating-input">
+                        <option>Seleccionar</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
                 </div>
-
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" id="pcr" name="pcr">
+                    <label class="form-check-label" for="pcr">
                         PCR </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">
+                    <input class="form-check-input" type="checkbox" id="vaccine" name="vaccine">
+                    <label class="form-check-label" for="vaccine">
                         VACUNA
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">
+                    <input class="form-check-input" type="checkbox" id="greenPassport" name="greenPassport">
+                    <label class="form-check-label" for="greenPassport">
                         GREEN PASSPORT
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">
+                    <input class="form-check-input" type="checkbox" id="quarantine" name="quarantine">
+                    <label class="form-check-label" for="quarantine">
                         CUARENTENA
                     </label>
                 </div>

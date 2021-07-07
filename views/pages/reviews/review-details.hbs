@@ -1,0 +1,45 @@
+<div class="container">
+
+    <h1>{{user.name}} Review</h1>
+    <hr>
+    <br>
+    <div class="row justify-content-between">
+        <div class="col-md-4">
+            <h1>{{airport.name}}</h1>
+
+        </div>
+        <div class="col-md-12 ">
+            <div id="airportMap"></div>
+
+        </div>
+    </div>
+
+    <hr>
+    <div class="row justify-content-between">
+        <div class="col-md-6">
+            <a href="/review" class=" btn btn-dark">Volver al listado</a>
+        </div>
+        <input hidden id="review_id" data-id={{id}} />
+        <div class="col-md-6 ">
+            <div class="btn-group">
+                <form action="/places/{{id}}/delete" method="POST">
+                    <button type="submit" class="btn btn-danger btn-lg mr-2">Eliminar</button>
+                </form>
+                <br>
+                <a class="btn btn-primary btn-lg" href="/places/{{id}}/edit">Editar</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+{{!-- Scrips para la gestión del mapa en la vista --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/js/mapStyles.js"></script>
+<script src="/js/map-setup.js"></script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwTH6kTi9AF4mF5D405BeR38sDTuyxNbg&callback=initMap"></script>
