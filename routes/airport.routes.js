@@ -5,11 +5,13 @@ const Airport = require('./../models/Airport.model')
 
 router.get('/', (req, res) => {
 
-    Airport
+    Review
         .find()
-        .then(airport => res.json(airport))
+        .populate('airport')
+        .then(reviews => {
+            res.render('pages/airports/airports-list', { reviews })
+        })
         .catch(err => console.log(err))
 })
-
 
 module.exports = router

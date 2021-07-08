@@ -1,0 +1,225 @@
+[{
+  "_id": {
+    "$oid": "60e474a545158451a0725aa5"
+  },
+  "experience": {
+    "positiveExperience": "Lalalalla",
+    "negativeExperience": "Lelelelel"
+  },
+  "requirements": {
+    "pcr": false,
+    "vaccine": true,
+    "greenPassport": true,
+    "quarantine": false
+  },
+  "travelDate": {
+    "$date": "2021-06-17T00:00:00Z"
+  },
+  "user": {
+    "$oid": "60e3407dbabb6633c8c1446c"
+  },
+  "airport": {
+    "$oid": "60e3411b382045e7fa99016d"
+  },
+  "migrationTime": 2,
+  "rating": 6,
+  "createdAt": {
+    "$date": "2021-07-06T15:20:05.432Z"
+  },
+  "updatedAt": {
+    "$date": "2021-07-06T15:20:05.432Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60e4761065f49624ccfa5ed5"
+  },
+  "experience": {
+    "positiveExperience": "Lalalalla",
+    "negativeExperience": "Lelelelel"
+  },
+  "requirements": {
+    "pcr": true,
+    "vaccine": false,
+    "greenPassport": false,
+    "quarantine": false
+  },
+  "travelDate": {
+    "$date": "2021-05-05T00:00:00Z"
+  },
+  "user": {
+    "$oid": "60e3407dbabb6633c8c1446c"
+  },
+  "airport": {
+    "$oid": "60e3411b382045e7fa990172"
+  },
+  "migrationTime": 2,
+  "rating": 3,
+  "createdAt": {
+    "$date": "2021-07-06T15:26:08.806Z"
+  },
+  "updatedAt": {
+    "$date": "2021-07-06T15:26:08.806Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60e57965d0c1863a4c472ffc"
+  },
+  "experience": {
+    "positiveExperience": "Lalalalla",
+    "negativeExperience": "Lelelelel"
+  },
+  "requirements": {
+    "pcr": true,
+    "vaccine": true,
+    "greenPassport": false,
+    "quarantine": false
+  },
+  "travelDate": {
+    "$date": "2021-07-01T00:00:00Z"
+  },
+  "user": {
+    "$oid": "60e3407dbabb6633c8c1446c"
+  },
+  "airport": {
+    "$oid": "60e3411b382045e7fa99017f"
+  },
+  "migrationTime": 2,
+  "rating": 5,
+  "createdAt": {
+    "$date": "2021-07-07T09:52:37.133Z"
+  },
+  "updatedAt": {
+    "$date": "2021-07-07T09:52:37.133Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60e5ca668594d45f28b72b25"
+  },
+  "experience": {
+    "positiveExperience": "No puedo mas con mi vida",
+    "negativeExperience": "Shorooooo"
+  },
+  "requirements": {
+    "pcr": true,
+    "vaccine": true,
+    "greenPassport": true,
+    "quarantine": true
+  },
+  "travelDate": {
+    "$date": "2021-07-16T00:00:00Z"
+  },
+  "user": {
+    "$oid": "60e3407dbabb6633c8c1446c"
+  },
+  "airport": {
+    "$oid": "60e3411b382045e7fa9904b8"
+  },
+  "migrationTime": 5,
+  "rating": 8,
+  "createdAt": {
+    "$date": "2021-07-07T15:38:14.882Z"
+  },
+  "updatedAt": {
+    "$date": "2021-07-07T15:38:14.882Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60e6ce1d9d55c95434aca9bd"
+  },
+  "experience": {
+    "positiveExperience": "Ninguna",
+    "negativeExperience": "Me voy"
+  },
+  "requirements": {
+    "pcr": true,
+    "vaccine": true,
+    "greenPassport": false,
+    "quarantine": false
+  },
+  "travelDate": {
+    "$date": "2021-07-29T00:00:00Z"
+  },
+  "user": {
+    "$oid": "60e3407dbabb6633c8c1446c"
+  },
+  "airport": {
+    "$oid": "60e3411b382045e7fa9901a6"
+  },
+  "migrationTime": 3,
+  "rating": 8,
+  "createdAt": {
+    "$date": "2021-07-08T10:06:21.051Z"
+  },
+  "updatedAt": {
+    "$date": "2021-07-08T10:06:21.051Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60e6d970f5f81254442fac29"
+  },
+  "experience": {
+    "positiveExperience": "Lalalalla",
+    "negativeExperience": "Lililil"
+  },
+  "requirements": {
+    "pcr": true,
+    "vaccine": true,
+    "greenPassport": false,
+    "quarantine": false
+  },
+  "travelDate": {
+    "$date": "2021-07-20T00:00:00Z"
+  },
+  "user": {
+    "$oid": "60e3407dbabb6633c8c1446c"
+  },
+  "airport": {
+    "$oid": "60e3411b382045e7fa9901bc"
+  },
+  "migrationTime": 2,
+  "rating": 6,
+  "createdAt": {
+    "$date": "2021-07-08T10:54:40.876Z"
+  },
+  "updatedAt": {
+    "$date": "2021-07-08T10:54:40.876Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60e6d9aaf5f81254442fac2e"
+  },
+  "experience": {
+    "positiveExperience": "Lolololo",
+    "negativeExperience": "Lulululu"
+  },
+  "requirements": {
+    "pcr": false,
+    "vaccine": false,
+    "greenPassport": true,
+    "quarantine": false
+  },
+  "travelDate": {
+    "$date": "2021-07-27T00:00:00Z"
+  },
+  "user": {
+    "$oid": "60e3407dbabb6633c8c1446c"
+  },
+  "airport": {
+    "$oid": "60e3411b382045e7fa990295"
+  },
+  "migrationTime": 4,
+  "rating": 5,
+  "createdAt": {
+    "$date": "2021-07-08T10:55:38.272Z"
+  },
+  "updatedAt": {
+    "$date": "2021-07-08T10:55:38.272Z"
+  },
+  "__v": 0
+}]
