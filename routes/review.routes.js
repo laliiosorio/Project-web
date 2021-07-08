@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 
 router.get('/new', checkLoggedUser, (req, res) => {
     Airport
-        .find()
+        .find({ name: { $ne: null }, type: "airport", lat: { $ne: null }, lon: { $ne: null } })
         .then(airports => res.render('pages/reviews/new-review', { airports }))
         .catch(err => console.log(err))
 })

@@ -1,15 +1,30 @@
-body {
-  font-family: sans-serif;
+body{
+    font-family: 'Poppins', sans-serif, "Raleway", sans-serif;
 }
 
-.navbar {
+.navbar .navbar-nav .nav-link {
+    color: #739af0;
+    font-size: 1.1em;
+}
+.navbar .navbar-nav .nav-link:hover{
+    color: #739af0;
+} 
+.navbar-logo-centered .navbar-nav .nav-link{
+    padding: .5em 1.5em;
+}
+.navbar{
   margin-bottom: 40px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  padding: 0;
 }
-
-img {
-  width: 100px;
+.logo-nav{
+  width: 5em;
 }
-
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0,0,0,.7);
+    padding: 10px;
+    margin: 20px;
+}
 .errorMessage {
     padding: 20px 5px;
     color: white;
@@ -33,4 +48,141 @@ img {
 #airportMap, #airportsMap{
   height: 380px;
   background-color: red;
+}
+
+/* HERO */
+#hero {
+  width: 100%;
+  height: 70vh;
+  margin-top: 70px;
+}
+
+#hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: black;
+}
+
+#hero h2 {
+  color: #484848;
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+
+#hero .btn-get-started {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  color: #3498db;
+  border: 2px solid #3498db;
+}
+
+#hero .btn-get-started:hover {
+  background: #3498db;
+  color: #fff;
+}
+
+#hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 991px) {
+  #hero {
+    height: 100vh;
+  }
+  #hero .animated {
+    -webkit-animation: none;
+    animation: none;
+  }
+  #hero .hero-img {
+    text-align: center;
+  }
+  #hero .hero-img img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    margin-top: 20px;
+  }
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  #hero .hero-img img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 575px) {
+  #hero .hero-img img {
+    width: 80%;
+  }
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* CARDS */
+
+.social-box .box{
+    background: #f2f2f2;
+    border-radius: 10px; 
+    padding: 40px 10px;
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.social-box .box:hover{
+   box-shadow: 0 0 6px #4183D7;
+}
+
+.social-box .box .box-text{
+    margin:20px 0px;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.social-box .box .box-btn a{
+    text-decoration: none;
+    color: #4183D7;
+    font-size: 16px;
+}
+
+.fas{
+     color:#4183D7;
 }

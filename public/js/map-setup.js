@@ -34,6 +34,28 @@ function getAirportData() {
         .catch(err => console.log('estoy entrando aqui', { err }))
 }
 
+function getAirportsData() {
+
+    Api
+        .getFullListAirports()
+        .then(response => {
+            console.log(response.data)
+
+            const myMap = new google.maps.Map(
+                document.querySelector('#airportsMap'),
+                { zoom: 2, center: { lat: 32.26017162019832, lng: - 38.8741490053185 }, styles: mapStyles.silver }
+            )
+            response.data.forEach(elm => {
+                new google.maps.Marker({
+                    map: myMap,
+                    position: { lat: elm.lat, lng: elm.lon }
+                })
+            })
+
+
+        })
+        .catch(err => console.log('estoy entrando aqui', { err }))
+}
 
 function printMarker(location, myMap) {
 
