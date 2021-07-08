@@ -8,34 +8,29 @@
 
             <hr>
 
-            <form action="/profile/{{id}}/edit" method="POST">
+            <form action="/profile/{{id}}/edit" method="POST" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Nombre Usuario</label>
                     <input type="text" class="form-control" name="name" id="name" value="{{name}}">
                 </div>
 
                 <div class="form-group">
-                    <label for="description">Description</label>
+                    <label for="description">Sobre ti</label>
                     <input type="text" class="form-control" name="description" id="description" value="{{description}}">
                 </div>
 
                 <div class="form-group">
                     <label for="mail">Email</label>
-                    <input type="text" class="form-control" name="mail" id="mail" value="{{mail}}">
+                    <input type="text" class="form-control" name="mail" id="mail" value="{{mail}}" />
                 </div>
 
-                {{!-- <div class="form-group">
-                    <div class="form-group">
-                        <label>Image:
-                            <input type="file" name="image" class="form-control-file" />
-                        </label>
-                    </div>
-                </div> --}}
+                <div class="form-group">
+                    <label>Foto Perfil:</label>
+                    <input type="file" name="image" class="form-control-file" value={{image}}/>
+                </div>
 
                 <button type="submit" class="btn btn-dark btn-block btn-lg">Guardar edición</button>
-
-                <a> Una vez guardado reinicia sesión para ver tus cambios<a>
 
             </form>
         </div>

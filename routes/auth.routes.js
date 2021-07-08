@@ -9,7 +9,7 @@ router.get('/signup', (req, res) => res.render('pages/auth/signup-page'))
 
 router.post('/signup', (req, res) => {
 
-  //incluir name
+  
   const { name, mail, pwd } = req.body
   if (!mail.length || !pwd.length) {
     res.render('pages/auth/signup-page', { errorMessage: 'Rellena todos los campos' })
@@ -21,33 +21,35 @@ router.post('/signup', (req, res) => {
     return
   }
 
+  
   User
-    .findOne({ mail })
+  .findOne({ mail })
     .then(user => {
-
+      
       if (user) {
         res.render('pages/auth/signup-page', { errorMessage: 'Usuario ya registrado' })
         return
       }
-
+      
       const bcryptSalt = 10
       const salt = bcrypt.genSaltSync(bcryptSalt)
       const hashPass = bcrypt.hashSync(pwd, salt)
-
-
+      
+      
       User
-        .create({ name, mail, password: hashPass })
-        .then(() => res.redirect('/'))
-        .catch(err => console.log(err, "si soy yo el error"))
-
+      .create({ name, mail, password: hashPass })
+      .then(() => res.redirect('/login'))
+      .catch(err => console.log(err, "si soy yo el error"))
+      
     })
     .catch(err => console.log(err))
-})
-
-// Login
-router.get('/login', (req, res) => res.render('pages/auth/login-page'))
-
-router.post('/login', (req, res) => {
+  })
+  
+  
+  // Login
+  router.get('/login', (req, res) => res.render('pages/auth/login-page'))
+  
+  router.post('/login', (req, res) => {
 
   const { mail, pwd } = req.body
 
