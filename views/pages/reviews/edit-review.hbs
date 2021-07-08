@@ -3,12 +3,14 @@
     <div class="row">
 
         <div class="col-md-6">
-            <h1 style="font-weight: 100">Nueva review</h1>
+
+            <h1 style="font-weight: 100">Reseña actualizada {{airport.name}}</h1>
+
         </div>
 
         <div class="col-md-6">
 
-            <form action="/review/new" method="POST">
+            <form action="/review/{{review.id}}/edit" method="POST">
                 <div class="form-group">
                     <label for="airports-list">Aeropuerto</label>
                     <select name="airport" class="form-control" id="airports-list">
@@ -34,7 +36,7 @@
                         value="{{review.experience.positiveExperience}}">
                 </div>
                 <div class="form-group">
-                    <label for="descriptionNegative-input">Experiencia negative</label>
+                    <label for="descriptionNegative-input">Experiencia negativa</label>
                     <input name="negativeExperience" type="text" class="form-control" id="descriptionNegative-input"
                         value="{{review.experience.negativeExperience}}">
                 </div>

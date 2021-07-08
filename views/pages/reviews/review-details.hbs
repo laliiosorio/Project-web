@@ -1,11 +1,11 @@
 <div class="container">
 
-    <h1>{{user.name}} Review</h1>
+    <h2>{{user.name}} Review</h2>
     <hr>
     <br>
     <div class="row justify-content-between">
-        <div class="col-md-4">
-            <h1>{{airport.name}}</h1>
+        <div class="col-md-6">
+            <h3>{{airport.name}}</h3>
 
         </div>
         <div class="col-md-12 ">
@@ -13,7 +13,31 @@
 
         </div>
     </div>
+    <p><b>Fecha:</b>{{createdAt}} </p> <p><b>Rating:</b> {{rating}}</p>
+    <p><b>Experiencia positiva:</b>{{experience.positiveExperience}}</p>
 
+    <p><b>Experiencia negativa:</b>{{experience.negativeExperience}}</p>
+    <p><b>Tiempo en migración:</b> {{migrationTime}}</p>
+    {{#if requirements.pcr }}
+    <p><b>PCR:</b>Sí</p>
+    {{else}}
+    <p><b>PCR:</b>No</p>
+    {{/if}}
+    {{#if requirements.vaccine }}
+    <p><b>VACUNA:</b>Sí</p>
+    {{else}}
+    <p><b>VACUNA:</b>No</p>
+    {{/if}}
+    {{#if requirements.greenPassport }}
+    <p><b>GREENPASSPORT:</b>Sí</p>
+    {{else}}
+    <p><b>GREENPASSPORT:</b>No</p>
+    {{/if}}
+    {{#if requirements.quarantine }}
+    <p><b>CUARENTENA:</b>Sí</p>
+    {{else}}
+    <p><b>CUARENTENA:</b>No</p>
+    {{/if}}
     <hr>
     <div class="row justify-content-between">
         <div class="col-md-6">

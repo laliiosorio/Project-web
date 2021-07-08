@@ -4,13 +4,18 @@ const Schema = mongoose.Schema;
 const airportSchema = new Schema(
     {
         name: {
-            type: String
+            type: String,
+            required:true,
+            minlength:2,
+            maxlength: 700,
         },
         iata: {
-            type: String
+            type: String,
+            maxlength: 3,
         },
         iso: {
-            type: String
+            type: String,
+            maxlength:2
         },
         status: {
             type: Boolean
@@ -25,10 +30,12 @@ const airportSchema = new Schema(
             type: String
         },
         lat: {
-            type: Number
+            type: Number,
+            maxlength:9
         },
         lon: {
-            type: Number
+            type: Number,
+            maxlength: 9
         }
     },
     {
