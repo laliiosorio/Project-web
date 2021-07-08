@@ -68,18 +68,46 @@ router.get('/:id/edit', (req, res) => {
         .catch(err => console.log(err))
 })
 
+router.post('/:id/edit', (req, res) => {
+
+    const { airport, travelDate, migrationTime, rating } = req.body;
+    const requirements = {
+        pcr: req.body.pcr ? true : false,
+        vaccine: req.body.vaccine ? true : false,
+        greenPassport: req.body.greenPassport ? true : false,
+        quarantine: req.body.quarantine ? true : false
+    }
+    const experience = { positiveExperience, negativeExperience } = req.body
+    const { id } = req.params;
+    Review
+        .findById(id)
+        .populate('airport')
+        .then(review => {
+            res.render('pages/reviews/edit-review', {airport:review.airport})
+        })
+        .catch(err => console.log(err))
+    Review
+        .create({ travelDate, airport, migrationTime, experience, rating, requirements })
+        .then(() => {
+            res.redirect('/review')
+        })
+        .catch(err => console.log(err))
+})
+
 
 
 //Esto al final !!!!
 router.get('/:id', (req, res) => {
 
     const { id } = req.params
-
+   
     Review
         .findById(id)
         .populate('user')
         .populate('airport')
-        .then(review => res.render('pages/reviews/review-details', review))
+        .then(review => { 
+            res.render('pages/reviews/review-details', review)
+        })
         .catch(err => console.log(err))
 })
 
