@@ -30,7 +30,7 @@ img {
   }
 }
 
-#airportMap{
+#airportMap, #airportsMap{
   height: 380px;
   background-color: red;
 }

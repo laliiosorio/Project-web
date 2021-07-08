@@ -21,22 +21,22 @@
                 <div class="form-group">
                     <label for="arrivalDate-input">Fecha del viaje</label>
                     <input name="travelDate" type="date" class="form-control" id="arrivalDate-input"
-                        value="{{travelDate}}">
+                        value="{{formatedDate}}">
                 </div>
                 <div class="form-group">
                     <label for="migration-input">Tiempo en migración</label>
                     <input name="migrationTime" type="number" class="form-control" id="migration-input"
-                        value="{{migrationTime}}">
+                        value="{{review.migrationTime}}">
                 </div>
                 <div class="form-group">
                     <label for="descriptionPositive-input">Experiencia positiva</label>
                     <input name="positiveExperience" type="text" class="form-control" id="descriptionPositive-input"
-                        value="{{experience.positiveExperience}}">
+                        value="{{review.experience.positiveExperience}}">
                 </div>
                 <div class="form-group">
                     <label for="descriptionNegative-input">Experiencia negative</label>
                     <input name="negativeExperience" type="text" class="form-control" id="descriptionNegative-input"
-                        value="{{experience.negativeExperience}}">
+                        value="{{review.experience.negativeExperience}}">
                 </div>
                 <div class="form-group">
                     <label for="rating-input">Rating</label>

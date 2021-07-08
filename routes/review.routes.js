@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Review = require('./../models/Review.model')
 const Airport = require('./../models/Airport.model')
 const { checkLoggedUser } = require('./../middleware')
+const { formatDate, toDate } = require("./../utils")
 
 
 router.get('/', (req, res) => {
@@ -9,16 +10,11 @@ router.get('/', (req, res) => {
         .find()
         .populate('airport')
         .then(reviews => {
-
-            let d = reviews[0].travelDate
-            let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
-            let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
-            let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
-            //console.log(`aqui fecha ${da}-${mo}-${ye}`)
-            const date = `${da}-${mo}-${ye}`
-            console.log(date)
-            console.log({ reviews, date })
-            res.render('pages/reviews/reviews-list', { reviews, date })
+            // console.log(reviews[0].travelDate)
+            // reviews.forEach(elm => formatDate(elm.travelDate))
+            // //console.log('soy la fecha del then', fecha)
+            // console.log({ reviews })
+            res.render('pages/reviews/reviews-list', { reviews })
         })
         .catch(err => console.log(err))
 })
@@ -31,20 +27,16 @@ router.get('/new', checkLoggedUser, (req, res) => {
 })
 
 router.post('/new', (req, res) => {
-    const { airport, travelDate, migrationTime, positiveExperience, negativeExperience, rating, pcr, vaccine, greenPassport, quarantine } = req.body
+    const { airport, travelDate, migrationTime, rating, } = req.body
 
     const user = req.session.currentUser._id
-    console.log('id user:', user._id)
     const requirements = {
         pcr: req.body.pcr ? true : false,
         vaccine: req.body.vaccine ? true : false,
         greenPassport: req.body.greenPassport ? true : false,
         quarantine: req.body.quarantine ? true : false
     }
-    const experience = { positiveExperience, negativeExperience }
-    console.log('AQUIIIIIIIIIIIIIIII TOY', req.body)
-    const final = { user, travelDate, airport, migrationTime, experience, rating, requirements }
-    console.log('AQUIIIIIIIIIIIIIIII TOY', final)
+    const experience = { positiveExperience, negativeExperience } = req.body
 
     Review
         .create({ user, travelDate, airport, migrationTime, experience, rating, requirements })
@@ -65,10 +57,14 @@ router.get('/:id/delete', (req, res) => {
 router.get('/:id/edit', (req, res) => {
 
     const { id } = req.params
+    const reviewPromise = Review.findById(id)
+    const airportPromise = Airport.find()
 
-    Review
-        .findById(id)
-        .then(place => res.render('pages/reviews/edit-review', place))
+    Promise.all([reviewPromise, airportPromise])
+        .then(results => {
+            let formatedDate = toDate(results[0].travelDate)
+            res.render('pages/reviews/edit-review', { review: results[0], airports: results[1], formatedDate })
+        })
         .catch(err => console.log(err))
 })
 

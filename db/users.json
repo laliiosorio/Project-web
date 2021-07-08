@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "60e3407dbabb6633c8c1446c"
+  },
+  "image": "https://image.flaticon.com/icons/png/512/1200/1200919.png",
+  "description": "Así soy yo",
+  "role": "MEMBER",
+  "mail": "laliiosorio@gmail.com",
+  "password": "$2b$10$79MP7fsgubdnii9EqL3jeORwmNdQHHxtYEnll13sloE1bkFBYRjqm",
+  "createdAt": {
+    "$date": "2021-07-05T17:25:17.512Z"
+  },
+  "updatedAt": {
+    "$date": "2021-07-07T13:43:30.547Z"
+  },
+  "__v": 0,
+  "name": "Lali"
+}]

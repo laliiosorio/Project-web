@@ -12,9 +12,9 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{airport.name}}</h5>
-                    {{#with $date}}
-                    <h6 class="card-subtitle mb-2 text-muted">{{date}}</h6>
-                    {{/with}}
+                    {{#each ../fecha}}
+                    <h6 class="card-subtitle mb-2 text-muted">{{this}}</h6>
+                    {{/each}}
                     <p class="card-text">{{experience.positiveExperience}}</p>
                     <a href="/review/{{id}}" class="card-link">Más Info</a>
                 </div>
