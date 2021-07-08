@@ -1,7 +1,7 @@
 class APIHandler {
 
     constructor() {
-        this.api = axios.create({ baseURL: 'https://localhost:3000/api' })
+        this.api = axios.create({ baseURL: 'http://localhost:3000/api' })
     }
 
     getFullListAirports = () => this.api.get('/')

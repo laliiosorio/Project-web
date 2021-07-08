@@ -51,6 +51,28 @@ router.post('/new', (req, res) => {
         .then(() => { res.redirect('/review') })
         .catch(err => console.log(err))
 })
+//Delete
+router.get('/:id/delete', (req, res) => {
+
+    const { id } = req.params
+
+    Review
+        .findByIdAndRemove(id)
+        .then(() => res.redirect('/review'))
+        .catch(err => console.log(err))
+})
+// Render Edit  
+router.get('/:id/edit', (req, res) => {
+
+    const { id } = req.params
+
+    Review
+        .findById(id)
+        .then(place => res.render('pages/reviews/edit-review', place))
+        .catch(err => console.log(err))
+})
+
+
 
 //Esto al final !!!!
 router.get('/:id', (req, res) => {
