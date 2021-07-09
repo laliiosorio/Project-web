@@ -1,28 +1,39 @@
-<div class="container coasters-index">
-
-    <a href="/review/new" class="btn btn-dark">Crear nueva review</a>
-    <br><br>
-    <h1 style="font-weight: 100">All reviews</h1>
-    <hr>
-    <br><br>
-
-    <div class="row">
-        {{#each reviews}}
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">{{airport.name}}</h5>
-                    {{#each ../fecha}}
-                    <h6 class="card-subtitle mb-2 text-muted">{{this}}</h6>
-                    {{/each}}
-                    <p class="card-text">{{experience.positiveExperience}}</p>
-                    <a href="/review/{{id}}" class="card-link">Más Info</a>
-                </div>
+<div class="container">
+    <div class="row justify-content-between">
+        <div>
+            <h1>Reseñas</h1>
+            <span><i class="fas fa-chevron-left"></i><a href="/">Inicio</a></span>
+        </div>
+        <br>
+        <div class="d-flex justify-content-end align-items-center">
+            <div class="btn-group">
+                <a href="/review/new" class="btn btn-get-started">Crear nueva reseña</a>
             </div>
         </div>
-        {{/each}}
     </div>
+    <hr>
+</div>
+<div class="social-box">
+    <div class="container">
+        <div class="row">
+            {{#each reviews}}
 
+            <div class="col-lg-4 col-xs-12 text-center">
+                <div class="box">
+                    <i class="fas fa-map-pin fa-3x" aria-hidden="true"></i>
+                    <div class="box-title">
+                        <h3>{{airport.name}}</h3>
+                    </div>
+                    <div class="box-text">
+                        <p class="card-text">{{experience.positiveExperience}}</p>
+                    </div>
+                    <div class="box-btn">
+                        <a href="/review/{{id}}" class="card-link">Más Info</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
 
-
+        </div>
+    </div>
 </div>

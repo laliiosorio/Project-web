@@ -1,39 +1,43 @@
 <div class="container">
-    <h1>Perfil Usuario</h1>
-    <hr>
-    <br>
     <div class="row justify-content-between">
-        <div class="col-md-4">
-
-            <h2><strong>Nombre: {{name}}</strong></h2>
+        <div>
+            <h2>Mi Perfil</h2>
+            <input hidden id="review_id" data-id={{id}} />
+            <span><i class="fas fa-chevron-left"></i><a href="/">Inicio</a></span>
         </div>
-
-        <div class="col-md-4 ">
+        <br>
+        <div class="d-flex justify-content-end align-items-center">
             <div class="btn-group">
-                <a href="profile/{{_id}}/delete" class="btn btn-danger">Eliminar usuario</a>
-                <br>
-                <a class="btn btn-primary btn-lg" href='/profile/{{_id}}/edit'>Editar</a>
+                <a class="btn btn-danger btn-lg" href="/profile/{{_id}}/delete">Eliminar</a>
+                <a class="btn btn-primary btn-lg" href="/profile/{{_id}}/edit">Editar</a>
             </div>
         </div>
     </div>
-    <section>
-
-        <div>
-            <img class='img' src="{{image}}" alt="{{name}}">
-        </div>
-
-    </section>
-
-    <div class="row">
-        <div class="col-md-8 flex-row">
-            <h4>Sobre ti: {{description}}</h4>
-        </div>
-        <div class="col-md-4">
-            <br>
-            <h6>Email:{{mail}}</h6>
-            <br>
-        </div>
-    </div>
     <hr>
-    <a href="/" class=" btn btn-dark">Volver a Inicio</a>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <section class="section about-section rounded " id="about">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-lg-6">
+                    <div class="about-text go-to">
+                        <h3 class="dark-color">{{name}}</h3>
+                        <p>{{description}}</p>
+                        <div class="row about-list">
+                            <div class="col-md-8">
+                                <div class="media">
+                                    <p><b>E-mail</b> {{mail}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-avatar">
+                        <img class='img-avatar' src="{{image}}" alt="{{name}}">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
