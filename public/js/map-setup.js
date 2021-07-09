@@ -24,7 +24,7 @@ function getAirportData() {
             console.log('aqui then', response.data.airport)
             const myMap = new google.maps.Map(
                 document.querySelector('#airportMap'),
-                { zoom: 14, center: { lat: location[0], lng: location[1] }, styles: mapStyles.silver }
+                { zoom: 14, center: { lat: location[0], lng: location[1] }, styles: mapStyles.aubergine }
             )
             new google.maps.Marker({
                 map: myMap,
@@ -43,7 +43,7 @@ function getAirportsData() {
 
             const myMap = new google.maps.Map(
                 document.querySelector('#airportsMap'),
-                { zoom: 2, center: { lat: 32.26017162019832, lng: - 38.8741490053185 }, styles: mapStyles.silver }
+                { zoom: 2, center: { lat: 32.26017162019832, lng: - 38.8741490053185 }, styles: mapStyles.aubergine }
             )
             response.data.forEach(elm => {
                 new google.maps.Marker({

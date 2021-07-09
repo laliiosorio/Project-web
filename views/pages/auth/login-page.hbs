@@ -1,27 +1,18 @@
-<div class="container">
-
+{{!-- <div class="container">
     <div class="row justify-content-center">
-
         <div class="col-md-6">
-
             <h1>Iniciar sesión</h1>
-
             <hr>
-
             <form action="/login" method="POST">
-
                 <div class="form-group">
                     <label for="mail">Email</label>
                     <input type="text" class="form-control" name="mail" id="mail">
                 </div>
-
                 <div class="form-group">
                     <label for="pwd">Contraseña</label>
                     <input type="password" class="form-control" name="pwd" id="pwd">
                 </div>
-
                 <button type="submit" class="btn btn-dark btn-block btn-lg">Iniciar sesión</button>
-
             </form>
             {{#if errorMessage}}
             <div class="errorMessage">
@@ -29,7 +20,47 @@
             </div>
             {{/if}}
         </div>
-
     </div>
+</div>
+--}}
 
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-12 col-lg-11 col-xl-10">
+            <div class="card d-flex mx-auto my-5">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12 col-xs-12 c1 p-5">
+                        <img src="https://i.imgur.com/kdE7GKw.jpg" width="120vw" height="210vh" class="mx-auto d-flex"
+                            alt="Teacher">
+                        <div class="row justify-content-center">
+                            <div class="w-75 mx-md-5 mx-1 mx-sm-2 mb-5 mt-4 px-sm-5 px-md-2 px-xl-1 px-2">
+                                <h1 class="wlcm">Bienvenido a la nueva normalidad</h1>
+                                <span class="sp1">
+                                    <span class="px-3 bg-danger rounded-pill"></span>
+                                    <span class="ml-2 px-1 rounded-circle"></span>
+                                    <span class="ml-2 px-1 rounded-circle"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12 col-xs-12 c2 px-5 pt-5">
+                        <form action="/login" method="POST" class="px-5 pb-5">
+                            <div class="d-flex">
+                                <h3 class="font-weight-bold">Iniciar Sesión</h3>
+                            </div>
+                            <input type="text" name="mail" id="mail" placeholder="E-Mail">
+                            <input type="password" name="pwd" id="pwd" placeholder="Contraseña">
+                            <button type="submit" class="btn btn-get-started">Iniciar Sesión</button>
+                            <h5 class="ac" id="register">Registrarse</h5>
+                        </form>
+                        {{#if errorMessage}}
+                        <div class="errorMessage">
+                            {{errorMessage}}
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

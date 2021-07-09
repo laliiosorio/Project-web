@@ -1,62 +1,72 @@
 <div class="container">
-
-    <h2>{{user.name}} Review</h2>
-    <hr>
-    <br>
     <div class="row justify-content-between">
-        <div class="col-md-6">
-            <h3>{{airport.name}}</h3>
-
+        <div>
+            <h2>{{user.name}} Review</h2>
+            <input hidden id="review_id" data-id={{id}} />
+            <span><i class="fas fa-chevron-left"></i><a href="/review">Volver al listado</a></span>
         </div>
-        <div class="col-md-12 ">
-            <div id="airportMap"></div>
-
-        </div>
-    </div>
-    <p><b>Fecha:</b>{{createdAt}} </p> <p><b>Rating:</b> {{rating}}</p>
-    <p><b>Experiencia positiva:</b>{{experience.positiveExperience}}</p>
-
-    <p><b>Experiencia negativa:</b>{{experience.negativeExperience}}</p>
-    <p><b>Tiempo en migración:</b> {{migrationTime}}</p>
-    {{#if requirements.pcr }}
-    <p><b>PCR:</b>Sí</p>
-    {{else}}
-    <p><b>PCR:</b>No</p>
-    {{/if}}
-    {{#if requirements.vaccine }}
-    <p><b>VACUNA:</b>Sí</p>
-    {{else}}
-    <p><b>VACUNA:</b>No</p>
-    {{/if}}
-    {{#if requirements.greenPassport }}
-    <p><b>GREENPASSPORT:</b>Sí</p>
-    {{else}}
-    <p><b>GREENPASSPORT:</b>No</p>
-    {{/if}}
-    {{#if requirements.quarantine }}
-    <p><b>CUARENTENA:</b>Sí</p>
-    {{else}}
-    <p><b>CUARENTENA:</b>No</p>
-    {{/if}}
-    <hr>
-    <div class="row justify-content-between">
-        <div class="col-md-6">
-            <a href="/review" class=" btn btn-dark">Volver al listado</a>
-        </div>
-        <input hidden id="review_id" data-id={{id}} />
-        <div class="col-md-6 ">
+        <br>
+        <div class="d-flex justify-content-end align-items-center">
             <div class="btn-group">
-
                 <a class="btn btn-danger btn-lg" href="/review/{{id}}/delete">Eliminar</a>
-                <br>
-
                 <a class="btn btn-primary btn-lg" href="/review/{{id}}/edit">Editar</a>
             </div>
         </div>
     </div>
-
-
+    <hr>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="project-info-box mt-0">
+                <h4>{{airport.name}}</h4>
+                <div>
+                    <i class="far fa-smile-beam fa-2x" aria-hidden="true"></i>
+                    <p class="mb-0">{{experience.positiveExperience}}</p>
+                </div>
+                <hr>
+                <div>
+                    <i class="far fa-frown fa-2x" aria-hidden="true"></i>
+                    <p class="mb-0">{{experience.negativeExperience}}</p>
+                </div>
+            </div>
+
+            <div class="project-info-box">
+                {{#if requirements.pcr }}
+                <p><b>PCR:</b> Sí</p>
+                {{else}}
+                <p><b>PCR:</b> No</p>
+                {{/if}}
+                {{#if requirements.vaccine }}
+                <p><b>VACUNA:</b> Sí</p>
+                {{else}}
+                <p><b>VACUNA:</b> No</p>
+                {{/if}}
+                {{#if requirements.greenPassport }}
+                <p><b>GREENPASSPORT:</b> Sí</p>
+                {{else}}
+                <p><b>GREENPASSPORT:</b> No</p>
+                {{/if}}
+                {{#if requirements.quarantine }}
+                <p><b>CUARENTENA:</b> Sí</p>
+                {{else}}
+                <p><b>CUARENTENA:</b> No</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div id="airportMap" class="rounded"></div>
+            <div class="project-info-box">
+                <p><b>Tiempo en migración:</b> {{migrationTime}} horas</p>
+                <p><b>Fecha:</b>{{createdAt}} </p>
+                <p><b>Rating:</b> {{rating}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 {{!-- Scrips para la gestión del mapa en la vista --}}

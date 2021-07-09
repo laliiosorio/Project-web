@@ -1,7 +1,20 @@
 <div class="container">
-    <h1>ALL AIRPORTS</h1>
+    <div class="row justify-content-between">
+        <div>
+            <h1>Aeropuertos</h1>
+            <span><i class="fas fa-chevron-left"></i><a href="/reviews">Reseñas</a></span>
+        </div>
+        <br>
+        <div class="d-flex justify-content-end align-items-center">
+            <div class="btn-group">
+                <a href="/review/new" class="btn btn-get-started">Crear nueva reseña</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+<div class="container">
     <div id="airportsMap"></div>
-
 </div>
 
 {{!-- Scrips para la gestión del mapa en la vista --}}
