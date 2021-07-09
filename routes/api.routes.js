@@ -6,7 +6,7 @@ const Airport = require('./../models/Airport.model')
 router.get('/', (req, res) => {
     Airport
         .find()
-        .select('name', 'lat', 'lon')
+        .select('name lat lon')
         .then(airport => res.json(airport))
         .catch(err => console.log(err))
 })
