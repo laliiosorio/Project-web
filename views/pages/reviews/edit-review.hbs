@@ -1,14 +1,15 @@
 <div class="container">
-
-    <div class="row">
-
-        <div class="col-md-6">
-
-            <h1 style="font-weight: 100">Reseña actualizada {{airport.name}}</h1>
-
+    <div class="row justify-content-between">
+        <div>
+            <h1>Editar reseña</h1>
+            <span><i class="fas fa-chevron-left"></i><a href="/review">Reseñas</a></span>
         </div>
-
-        <div class="col-md-6">
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 box-form">
 
             <form action="/review/{{review.id}}/edit" method="POST">
                 <div class="form-group">
@@ -80,11 +81,9 @@
                     </label>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-dark">Crear review</button>
+                <button type="submit" class="btn-get-started">Crear review</button>
                 <br>
                 <br>
-                <a href="/" class="btn btn-dark">Volver</a>
-
             </form>
         </div>
 

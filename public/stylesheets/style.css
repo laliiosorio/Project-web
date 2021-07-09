@@ -78,7 +78,7 @@ a{
 }
 
 #hero h1 {
-  margin: 0 0 10px 0;
+  margin: 0 0 30px 0;
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
@@ -178,7 +178,7 @@ a{
 
 /* CARDS */
 
-.social-box .box{
+.social-box .box, .box-form{
     background: #ffffff;
     border-radius: 10px; 
     padding: 40px 10px;
@@ -186,8 +186,10 @@ a{
     cursor: pointer;
     transition: all 0.5s ease-out;
 }
-
-.social-box .box:hover{
+.box-form{
+    padding: 40px 40px;
+}
+.social-box .box:hover, .box-form{
    box-shadow: 0 0 6px #739af0;
 }
 
@@ -317,8 +319,12 @@ a{
 }
 
 /* LOGIN & SIGNUP FORM */
-
-
+.forms-user:hover{
+   box-shadow: 0 0 6px #739af0;
+}
+.form-img{
+   width: 120vw;
+}
 .card {
     padding: 0px 15px;
     border-radius: 20px
@@ -332,7 +338,8 @@ a{
 .ac {
     font-weight: bold;
     color: #739af0;
-    font-size: 12px
+    font-size: 12px;
+    margin-left: 5em;
 }
 
 input,
@@ -345,17 +352,14 @@ button {
     border: 1px solid #aec1eb;
 }
 
-form {
-    margin-top: 70px
+.forms-user form {
+    margin-top: 95px
 }
 
 form>* {
     margin: 10px 0px
 }
 
-#register {
-    text-align: center
-}
 
 .wlcm {
     font-size: 30px
